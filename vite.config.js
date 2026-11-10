@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev
 export default defineConfig({
   plugins: [react()],
-  base: "/", // Это гарантирует, что пути /images/... всегда будут искаться от корня сайта
+  base: "/", // Это заставит Vite искать все файлы /images и /vite.svg от корня сайта
 });
