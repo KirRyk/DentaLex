@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
+// https://vite.dev
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()],
+  base: "/", // Это гарантирует, что пути /images/... всегда будут искаться от корня сайта
 });
