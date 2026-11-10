@@ -44,8 +44,17 @@ button:hover {
 
 /* ------------------------------------------------ Плавающая шапка -------------------------------- */
 
-.flow-header-logo {
+/* В плавающей шапке на ПК логотип НЕ нужен (он там только для мобильных) */
+.flow-header .flow-header-logo {
   display: none;
+}
+
+/* В основной шапке на ПК логотип ДОЛЖЕН отображаться */
+.header .flow-header-logo {
+  display: block;
+  width: 160px; /* Задайте нужную ширину для ПК */
+  height: auto;
+  object-fit: contain;
 }
 
 .flow-header {
@@ -734,11 +743,16 @@ button:hover {
     scroll-margin-top: 40px;
   }
 
-  /* Плавающая шапка */
-  .flow-header-logo {
+  /* В плавающей шапке на мобильных логотип ПОЯВЛЯЕТСЯ */
+  .flow-header .flow-header-logo {
     display: block;
-    height: 35px;
-    margin-right: auto;
+    width: 120px; /* Размер поменьше для телефонов */
+    height: auto;
+  }
+
+  /* В основной шапке на мобильных логотип СКРЫВАЕТСЯ (чтобы не мешать меню) */
+  .header .flow-header-logo {
+    display: none;
   }
 
   .flow-header {
