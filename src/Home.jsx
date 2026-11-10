@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { servicesData } from "./Services.jsx";
 
+import logoImg from "./images/logo-denta-leks.png";
+
 export default function Home() {
   /* ------------------------------------- Работа с картой ------------------------------------------------- */
   const [showMap, setShowMap] = useState(false);
@@ -245,12 +247,7 @@ export default function Home() {
 
       {/* ------------------------------------- Плавающая шапка ------------------------------------------------- */}
       <div className="flow-header">
-        {/* Логотип (показывается только на мобильных) */}
-        <img
-          className="flow-header-logo"
-          src="./images/logo-denta-leks.png"
-          alt="Логотип"
-        />
+        <img className="flow-header-logo" src={logoImg} alt="Логотип" />
 
         {/* Контакты */}
         <div className="flow-header-contacts">
@@ -437,11 +434,8 @@ export default function Home() {
         onMouseEnter={handleFlowHeaderMouseEnter}
         onMouseLeave={handleFlowHeaderMouseLeave}
       >
-        <img
-          className="header-logo"
-          src="./images/logo-denta-leks.png"
-          alt="Логотип"
-        />
+        {/* Логотип теперь находится здесь вне условия — он будет виден всегда */}
+        <img className="flow-header-logo" src={logoImg} alt="Логотип" />
 
         {isMobile ? (
           <>
@@ -504,16 +498,6 @@ export default function Home() {
               >
                 Отзывы
               </a>
-              {/*<a
-                className="header-nav"
-                href="#contacts"
-                onClick={(e) => {
-                  handleNavClick(e, "contacts");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Контакты
-              </a>*/}
             </div>
           </>
         ) : (
@@ -553,13 +537,6 @@ export default function Home() {
             >
               Отзывы
             </a>
-            {/*<a
-              className="header-nav"
-              href="#contacts"
-              onClick={(e) => handleNavClick(e, "contacts")}
-            >
-              Контакты
-            </a>*/}
           </>
         )}
       </header>
